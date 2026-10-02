@@ -10,18 +10,10 @@ const logoWhite = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file_
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
-    <picture className={`block size-7 shrink-0 ${className}`}>
-      <source media="(prefers-color-scheme: dark)" srcSet={logoWhite} />
-      <img
-        src={logoBlack}
-        alt=""
-        width={28}
-        height={28}
-        fetchPriority="high"
-        decoding="async"
-        className="size-full object-contain"
-      />
-    </picture>
+    <span className={`relative block size-7 shrink-0 ${className}`} aria-hidden="true">
+      <img src={logoBlack} alt="" width={28} height={28} fetchPriority="high" decoding="async" className="absolute inset-0 size-full object-contain dark:hidden" />
+      <img src={logoWhite} alt="" width={28} height={28} fetchPriority="high" decoding="async" className="absolute inset-0 hidden size-full object-contain dark:block" />
+    </span>
   )
 }
 
