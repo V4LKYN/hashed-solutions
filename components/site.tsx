@@ -10,9 +10,17 @@ const logoWhite = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file_
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
-    <picture className={`block ${className}`}>
+    <picture className={`block size-7 shrink-0 ${className}`}>
       <source media="(prefers-color-scheme: dark)" srcSet={logoWhite} />
-      <img src={logoBlack} alt="Hashed Solutions" className="h-full w-full object-contain" />
+      <img
+        src={logoBlack}
+        alt=""
+        width={28}
+        height={28}
+        fetchPriority="high"
+        decoding="async"
+        className="size-full object-contain"
+      />
     </picture>
   )
 }
@@ -22,8 +30,9 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#0b0d0c]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-6 lg:px-8">
-        <Link href="/" aria-label="Hashed Solutions home" className="h-9 w-32">
+        <Link href="/" aria-label="Hashed Solutions home" className="flex min-w-0 items-center gap-2.5">
           <Logo />
+          <span className="whitespace-nowrap text-[15px] font-medium tracking-[-0.02em] text-white">Hashed Solutions</span>
         </Link>
         <nav className="hidden items-center gap-9 text-[13px] text-white/60 md:flex">
           <a href="#about" className="transition-colors hover:text-white">Company</a>
@@ -50,7 +59,7 @@ export function ProductCard({ product }: { product: typeof products[number] }) {
 }
 
 export function Footer() {
-  return <footer className="border-t border-white/10"><div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div className="flex items-center gap-3"><div className="h-7 w-24"><Logo /></div><span className="text-xs text-white/30">© 2026 Hashed Solutions</span></div><div className="flex gap-6 text-xs text-white/40"><a href="#about" className="hover:text-white">About</a><a href="#products" className="hover:text-white">Products</a><a href="#contact" className="hover:text-white">Contact</a></div></div></footer>
+  return <footer className="border-t border-white/10"><div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div className="flex items-center gap-3"><div className="flex items-center gap-2.5"><Logo /><span className="text-sm font-medium tracking-[-0.02em] text-white/70">Hashed Solutions</span></div><span className="text-xs text-white/30">© 2026 Hashed Solutions</span></div><div className="flex gap-6 text-xs text-white/40"><a href="#about" className="hover:text-white">About</a><a href="#products" className="hover:text-white">Products</a><a href="#contact" className="hover:text-white">Contact</a></div></div></footer>
 }
 
 export { SectionLabel }
