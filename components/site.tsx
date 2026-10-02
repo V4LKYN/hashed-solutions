@@ -10,10 +10,10 @@ const logoWhite = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file_
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
-    <span className={`relative block size-7 shrink-0 ${className}`} aria-hidden="true">
-      <img src={logoBlack} alt="" width={28} height={28} fetchPriority="high" decoding="async" className="absolute inset-0 size-full object-contain dark:hidden" />
-      <img src={logoWhite} alt="" width={28} height={28} fetchPriority="high" decoding="async" className="absolute inset-0 hidden size-full object-contain dark:block" />
-    </span>
+    <picture className={`block size-7 shrink-0 ${className}`}>
+      <source media="(prefers-color-scheme: dark)" srcSet={logoWhite} />
+      <img src={logoBlack} alt="" width={28} height={28} fetchPriority="high" decoding="async" className="size-full object-contain" />
+    </picture>
   )
 }
 
@@ -45,7 +45,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export function ProductCard({ product }: { product: typeof products[number] }) {
   return <Link href={`/products/${product.slug}`} className="group flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6 transition-colors hover:border-[#58e791]">
-    <div><div className="mb-12"><span className="font-mono text-xs text-white/35">{product.code}</span></div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div><span className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors group-hover:text-[#58e791]">Explore product <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
+    <div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div><span className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors group-hover:text-[#58e791]">Explore service <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
   </Link>
 }
 
