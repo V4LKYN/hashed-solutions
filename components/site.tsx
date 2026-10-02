@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight, ChevronRight, LockKeyhole, Menu, Network, Database, X } from 'lucide-react'
+import { ArrowUpRight, ChevronRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { productCatalog } from '@/components/product-data'
 
@@ -52,9 +52,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export function ProductCard({ product }: { product: typeof products[number] }) {
-  const Icon = { mepp: LockKeyhole, acci: Network, data: Database }[product.slug]
   return <Link href={`/products/${product.slug}`} className="group flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6 transition-colors hover:border-[#58e791]">
-    <div><div className="mb-12 flex items-center justify-between"><span className="font-mono text-xs text-white/35">{product.code}</span><Icon className="size-5 text-[#58e791]" strokeWidth={1.4} /></div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div><span className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors group-hover:text-[#58e791]">Explore product <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
+    <div><div className="mb-12"><span className="font-mono text-xs text-white/35">{product.code}</span></div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div><span className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors group-hover:text-[#58e791]">Explore product <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
   </Link>
 }
 
