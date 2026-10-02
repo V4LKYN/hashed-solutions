@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { productCatalog } from '@/components/product-data'
 
@@ -31,7 +31,7 @@ function HeaderMenu({ label, links }: { label: string; links: { slug: string; na
         {label}<ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
       </button>
       <div className="pointer-events-none invisible absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2 rounded-xl border border-white/10 bg-[#111412] p-2 opacity-0 shadow-2xl transition-all group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-        {links.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} className="block rounded-lg px-3 py-3 transition-colors hover:bg-white/[0.06] hover:text-white"><span className="block text-sm text-white/90">{item.name}</span><span className="mt-1 block text-[11px] leading-4 text-white/40">{item.label}</span></Link>)}
+        {links.map((item) => <span key={item.slug} className="block rounded-lg px-3 py-3"><span className="block text-sm text-white/90">{item.name}</span><span className="mt-1 block text-[11px] leading-4 text-white/40">{item.label}</span></span>)}
       </div>
     </div>
   )
@@ -54,7 +54,7 @@ export function Header() {
         </nav>
         <button className="text-white md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </div>
-      {open && <nav className="border-t border-white/[0.08] bg-[#0b0d0c] px-6 py-6 text-sm text-white/70 md:hidden"><div className="flex flex-col gap-5"><span className="text-[11px] uppercase tracking-[0.2em] text-[#58e791]">Services</span>{serviceLinks.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} onClick={() => setOpen(false)}>{item.name}</Link>)}</div><div className="mt-7 flex flex-col gap-5 border-t border-white/[0.08] pt-6"><span className="text-[11px] uppercase tracking-[0.2em] text-[#58e791]">Tools</span>{toolLinks.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} onClick={() => setOpen(false)}>{item.name}</Link>)}</div><div className="mt-7 flex flex-col gap-5 border-t border-white/[0.08] pt-6"><a href="#docs" onClick={() => setOpen(false)}>Docs</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></div></nav>} 
+      {open && <nav className="border-t border-white/[0.08] bg-[#0b0d0c] px-6 py-6 text-sm text-white/70 md:hidden"><div className="flex flex-col gap-5"><span className="text-[11px] uppercase tracking-[0.2em] text-[#58e791]">Services</span>{serviceLinks.map((item) => <span key={item.slug}>{item.name}</span>)}</div><div className="mt-7 flex flex-col gap-5 border-t border-white/[0.08] pt-6"><span className="text-[11px] uppercase tracking-[0.2em] text-[#58e791]">Tools</span>{toolLinks.map((item) => <span key={item.slug}>{item.name}</span>)}</div><div className="mt-7 flex flex-col gap-5 border-t border-white/[0.08] pt-6"><a href="#docs" onClick={() => setOpen(false)}>Docs</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></div></nav>} 
     </header>
   )
 }
@@ -64,9 +64,9 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export function ProductCard({ product }: { product: typeof products[number] }) {
-  return <Link href={`/products/${product.slug}`} className="group flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6 transition-colors hover:border-[#58e791]">
-    <div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div><span className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors group-hover:text-[#58e791]">Explore service <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
-  </Link>
+  return <article className="flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6">
+    <div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div>
+  </article>
 }
 
 export function Footer() {
