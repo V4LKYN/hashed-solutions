@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight, ChevronRight, Menu, X } from 'lucide-react'
+import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { productCatalog } from '@/components/product-data'
 
@@ -17,6 +17,26 @@ export function Logo({ className = '' }: { className?: string }) {
   )
 }
 
+const serviceLinks = productCatalog.map(({ slug, name, label }) => ({ slug, name, label }))
+const toolLinks = [
+  { slug: 'data', name: 'DATA', label: 'Data And Tool API' },
+  { slug: 'smart-contract-builder', name: 'Smart Contract Builder', label: 'Contract development workspace' },
+  { slug: 'dapp-builder', name: 'Dapp Builder', label: 'Application development toolkit' },
+]
+
+function HeaderMenu({ label, links }: { label: string; links: { slug: string; name: string; label: string }[] }) {
+  return (
+    <div className="group relative">
+      <button className="flex items-center gap-1.5 py-5 transition-colors group-hover:text-white" aria-haspopup="true">
+        {label}<ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+      </button>
+      <div className="pointer-events-none invisible absolute left-1/2 top-full w-64 -translate-x-1/2 translate-y-2 rounded-xl border border-white/10 bg-[#111412] p-2 opacity-0 shadow-2xl transition-all group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+        {links.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} className="block rounded-lg px-3 py-3 transition-colors hover:bg-white/[0.06] hover:text-white"><span className="block text-sm text-white/90">{item.name}</span><span className="mt-1 block text-[11px] leading-4 text-white/40">{item.label}</span></Link>)}
+      </div>
+    </div>
+  )
+}
+
 export function Header() {
   const [open, setOpen] = useState(false)
   return (
@@ -27,14 +47,14 @@ export function Header() {
           <span className="whitespace-nowrap text-[15px] font-medium tracking-[-0.02em] text-white">Hashed Solutions</span>
         </Link>
         <nav className="hidden items-center gap-9 text-[13px] text-white/60 md:flex">
-          <a href="#about" className="transition-colors hover:text-white">Company</a>
-          <a href="#products" className="transition-colors hover:text-white">Products</a>
-          <a href="#technology" className="transition-colors hover:text-white">Technology</a>
+          <HeaderMenu label="Services" links={serviceLinks} />
+          <HeaderMenu label="Tools" links={toolLinks} />
+          <a href="#docs" className="py-5 transition-colors hover:text-white">Docs</a>
+          <a href="#contact" className="py-5 transition-colors hover:text-white">Contact</a>
         </nav>
-        <a href="#contact" className="hidden items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[13px] text-white transition-colors hover:border-[#58e791]/60 hover:text-[#58e791] md:flex">Start a conversation <ArrowUpRight className="size-3.5" /></a>
         <button className="text-white md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       </div>
-      {open && <nav className="flex flex-col gap-5 border-t border-white/[0.08] bg-[#0b0d0c] px-6 py-6 text-sm text-white/70 md:hidden"><a href="#about" onClick={() => setOpen(false)}>Company</a><a href="#products" onClick={() => setOpen(false)}>Products</a><a href="#technology" onClick={() => setOpen(false)}>Technology</a><a href="#contact" onClick={() => setOpen(false)} className="text-[#58e791]">Start a conversation</a></nav>}
+      {open && <nav className="flex flex-col gap-5 border-t border-white/[0.08] bg-[#0b0d0c] px-6 py-6 text-sm text-white/70 md:hidden"><span className="text-[11px] uppercase tracking-[0.2em] text-[#58e791]">Services</span>{serviceLinks.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} onClick={() => setOpen(false)}>{item.name}</Link>)}<span className="pt-2 text-[11px] uppercase tracking-[0.2em] text-[#58e791]">Tools</span>{toolLinks.map((item) => <Link key={item.slug} href={`/products/${item.slug}`} onClick={() => setOpen(false)}>{item.name}</Link>)}<a href="#docs" onClick={() => setOpen(false)}>Docs</a><a href="#contact" onClick={() => setOpen(false)}>Contact</a></nav>}
     </header>
   )
 }
