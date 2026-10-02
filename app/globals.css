@@ -157,7 +157,25 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    background: #0b0d0c;
   }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main > section:first-of-type > div:last-child { animation: rise-in 900ms cubic-bezier(.22,1,.36,1) both; }
+}
+
+::selection {
+  background: #58e791;
+  color: #0b0d0c;
 }
