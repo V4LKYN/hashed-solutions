@@ -19,9 +19,9 @@ export function Logo({ className = '' }: { className?: string }) {
 
 const serviceLinks = productCatalog.map(({ slug, name, label }) => ({ slug, name, label }))
 const toolLinks = [
-  { slug: 'data', name: 'API Tools', label: 'Data And Tool API' },
-  { slug: 'smart-contract-builder', name: 'Smart Contract Builder', label: 'Contract development workspace' },
-  { slug: 'dapp-builder', name: 'Dapp Builder', label: 'Application development toolkit' },
+  { slug: 'system-tools', name: 'System Tools', label: 'Connect and manage Hashed products and services' },
+  { slug: 'developer-tools', name: 'Developer Tools', label: 'Build on networks and integrate existing systems' },
+  { slug: 'ai-tools', name: 'AI Tools', label: 'Create smart contracts and dApps on existing networks' },
 ]
 
 function HeaderMenu({ label, links }: { label: string; links: { slug: string; name: string; label: string }[] }) {
