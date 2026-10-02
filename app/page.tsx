@@ -1,11 +1,11 @@
 import { ArrowUpRight, Blocks, Check, Command, Cpu, ShieldCheck } from 'lucide-react'
 import { Footer, Header, ProductCard, SectionLabel } from '@/components/site'
-import { dataTool, productCatalog } from '@/components/product-data'
+import { productCatalog } from '@/components/product-data'
 
 const tools = [
-  { ...dataTool },
-  { slug: 'smart-contract-builder', name: 'Smart Contract Builder', label: 'Contract development workspace', description: 'Compose, test, and deploy contract logic through a clear, dependable development workflow.' },
-  { slug: 'dapp-builder', name: 'Dapp Builder', label: 'Application development toolkit', description: 'Turn protocol capabilities into focused applications without rebuilding the same foundations.' },
+  { slug: 'system-tools', name: 'System Tools', label: 'Connect and manage Hashed systems', description: 'Tools and APIs for connecting to, configuring, and managing Hashed Solutions products and services.' },
+  { slug: 'developer-tools', name: 'Developer Tools', label: 'Build and integrate with confidence', description: 'Developer-focused tools for building on blockchain networks and integrating existing systems into Hashed systems.' },
+  { slug: 'ai-tools', name: 'AI Tools', label: 'Create onchain applications', description: 'Intelligent tools for creating smart contracts, dApps, and other blockchain applications on existing networks.' },
 ]
 
 export default function Page() {
