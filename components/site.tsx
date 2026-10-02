@@ -19,7 +19,7 @@ export function Logo({ className = '' }: { className?: string }) {
 
 const serviceLinks = productCatalog.map(({ slug, name, label }) => ({ slug, name, label }))
 const toolLinks = [
-  { slug: 'data', name: 'DATA', label: 'Data And Tool API' },
+  { slug: 'data', name: 'API Tools', label: 'Data And Tool API' },
   { slug: 'smart-contract-builder', name: 'Smart Contract Builder', label: 'Contract development workspace' },
   { slug: 'dapp-builder', name: 'Dapp Builder', label: 'Application development toolkit' },
 ]
