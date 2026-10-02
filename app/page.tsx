@@ -30,7 +30,7 @@ export default function Page() {
 function ToolCard({ tool }: { tool: { slug: string; name: string; label: string; description: string } }) {
   return <div className="flex min-h-[280px] flex-col justify-between border-b border-white/10 py-8 md:border-b-0 md:px-8 md:first:pl-0 md:last:pr-0">
     <div><h3 className="mb-3 text-lg font-medium text-white">{tool.name}</h3><p className="mb-3 text-xs uppercase tracking-[0.16em] text-white/35">{tool.label}</p><p className="text-sm leading-6 text-white/40">{tool.description}</p></div>
-    <a href="#contact" className="group mt-8 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[#58e791]">Explore tool <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
+    <a href="#contact" className="group mt-8 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[#58e791]">Explore tools <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
   </div>
 }
 

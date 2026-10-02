@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { productCatalog } from '@/components/product-data'
 
@@ -66,6 +66,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export function ProductCard({ product }: { product: typeof products[number] }) {
   return <article className="flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6">
     <div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div>
+    <a href="#contact" className="group mt-8 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[#58e791]">Explore Service <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
   </article>
 }
 
