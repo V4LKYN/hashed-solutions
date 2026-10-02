@@ -34,6 +34,6 @@ function ToolCard({ tool }: { tool: { slug: string; name: string; label: string;
   </div>
 }
 
-function Tech({ icon: Icon, title, text }: { icon: typeof ShieldCheck; title: string; text: string }) { return <div className="bg-[#0b0d0c] p-7 sm:p-9"><Icon className="mb-14 size-5 text-[#58e791]" strokeWidth={1.4} /><h3 className="mb-3 text-base font-medium text-white">{title}</h3><p className="text-sm leading-6 text-white/40">{text}</p></div> }
+function Tech({ icon: Icon, title, text }: { icon: typeof ShieldCheck; title: string; text: string }) { return <div className="bg-[#0b0d0c] p-7 sm:p-9"><Icon className="mb-8 size-5 text-[#58e791]" strokeWidth={1.4} /><h3 className="mb-3 text-base font-medium text-white">{title}</h3><p className="text-sm leading-6 text-white/40">{text}</p></div> }
 
 export { Page }

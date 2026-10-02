@@ -175,3 +175,38 @@
   background: #58e791;
   color: #0b0d0c;
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #f7f8f7;
+    color: #111512;
+  }
+
+  .text-white,
+  [class*="text-white/"] {
+    color: #111512 !important;
+  }
+
+  [class*="text-white/60"],
+  [class*="text-white/50"],
+  [class*="text-white/45"],
+  [class*="text-white/40"],
+  [class*="text-white/35"],
+  [class*="text-white/30"] {
+    color: #5d665f !important;
+  }
+
+  [class*="bg-[#0b0d0c]"],
+  [class*="bg-[#101311]"],
+  [class*="bg-[#111412]"] {
+    background-color: #ffffff !important;
+  }
+
+  [class*="border-white/"] {
+    border-color: rgba(17, 21, 18, 0.12) !important;
+  }
+
+  header {
+    background-color: rgba(247, 248, 247, 0.86) !important;
+  }
+}
