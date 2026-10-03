@@ -3,17 +3,6 @@
 @import 'shadcn/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 
-.logofont {
-  font-family: "Anta", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.null{
-
-}
-
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -71,6 +60,7 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
+  --muted: oklch(0.97 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -169,18 +159,37 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   html {
     scroll-behavior: smooth;
   }
+
   body {
     @apply bg-background text-foreground;
     background: #0b0d0c;
   }
+
+  /*
+   * Custom logo font
+   * Google Font: Anta
+   */
+  .logofont {
+    font-family: "Anta", sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+  }
 }
 
 @keyframes rise-in {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 ::selection {
