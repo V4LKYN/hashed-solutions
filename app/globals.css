@@ -60,7 +60,6 @@
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --muted: oklch(0.97 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -177,6 +176,14 @@
     font-family: "Anta", sans-serif !important;
     font-weight: 400;
     font-style: normal;
+  }
+
+  /*
+   * Minimum-width button
+   */
+  .minwidthbutton {
+    min-width: 130px;
+    justify-content: center;
   }
 }
 
