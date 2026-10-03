@@ -71,7 +71,7 @@ export function ProductCard({ product }: { product: typeof products[number] }) {
 }
 
 export function Footer() {
-  return <footer className="border-t border-white/10"><div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div className="flex items-center gap-3"><div className="flex items-center gap-2.5"><Logo /><span className="text-sm font-normal tracking-[-0.02em] text-white/70 logofont">Hashed Solutions</span></div><span className="text-xs text-white/30">© 2026 Hashed Solutions</span></div><div className="flex gap-6 text-xs text-white/40"><a href="#docs" className="hover:text-white">Docs</a><a href="#contact" className="hover:text-white">Contact</a></div></div></footer>
+  return <footer className="border-t border-white/10"><div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-8"><div className="flex items-center gap-3"><div className="flex items-center gap-2.5"><Logo /><span className="text-sm font-normal tracking-[-0.02em] text-white/70 logofont">Hashed Solutions</span></div><p><span className="text-xs text-white/30">© 2026 Hashed Solutions</span></p></div><div className="flex gap-6 text-xs text-white/40"><a href="#docs" className="hover:text-white">Docs</a><a href="#contact" className="hover:text-white">Contact</a></div></div></footer>
 }
 
 export { SectionLabel }
