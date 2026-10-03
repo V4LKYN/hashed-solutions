@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Hashed Solutions — Make the complex useful',
+  title: 'Hashed Solutions',
   description: 'Hashed Solutions designs the systems that make blockchain technology easier to integrate, operate, and use in the real world.',
   generator: 'v0.app',
   icons: {
