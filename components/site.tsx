@@ -41,8 +41,8 @@ export function Header() {
   const [open, setOpen] = useState(false)
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#0b0d0c]/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-2 lg:px-8">
-        <Link href="/" aria-label="Hashed Solutions home" className="flex min-w-0 items-center gap-2.5">
+      <div className="mx-auto flex h-[76px] max-w-[1240px] items-center justify-between px-6 lg:px-8">
+        <Link href="/" aria-label="Hashed Solutions home" className="flex min-w-0 items-center gap-1">
           <Logo />
           <span className="whitespace-nowrap text-[15px] tracking-[-0.02em] text-white logofont">Hashed Solutions</span>
         </Link>
