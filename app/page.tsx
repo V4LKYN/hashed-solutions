@@ -3,7 +3,7 @@ import { Footer, Header, ProductCard, SectionLabel } from '@/components/site'
 import { productCatalog } from '@/components/product-data'
 
 const tools = [
-  { slug: 'system-tools', name: 'System Tools', label: 'Connect and manage Hashed systems', description: 'Tools and APIs for connecting to, configuring, and managing Hashed Solutions products and services.' },
+  { slug: 'system-tools', name: 'System Tools', label: 'Connect and manage Hashed systems', description: 'Tools and APIs for connecting to, configuring, and managing Hashed products and services.' },
   { slug: 'developer-tools', name: 'Developer Tools', label: 'Build and integrate with confidence', description: 'Developer-focused tools for building on blockchain networks and integrating existing systems into Hashed systems.' },
   { slug: 'ai-tools', name: 'AI Tools', label: 'Create onchain applications', description: 'Intelligent tools for creating smart contracts, dApps, and other blockchain applications on existing networks.' },
 ]
