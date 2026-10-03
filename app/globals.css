@@ -178,6 +178,7 @@
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: italic;
+  transform: skewX(-5deg);
 }
 
   /*
