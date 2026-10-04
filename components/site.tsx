@@ -5,8 +5,8 @@ import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { productCatalog } from '@/components/product-data'
 
-const logoBlack = '/app/images/logo-black.png'
-const logoWhite = '/app/images/logo-white.png'
+const logoBlack = '/images/logo-black.png'
+const logoWhite = '/images/logo-white.png'
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
