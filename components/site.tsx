@@ -5,8 +5,8 @@ import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { productCatalog } from '@/components/product-data'
 
-const logoBlack = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo_black_transparent_1536x1044-i7OKf4UH6fNRuzrsRuY8Q3ySDh2BBb.png'
-const logoWhite = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file_00000000a6d081fda519172b992bc373-I0aCZboR2vl7fGprChTTC1HtYIKRsZ.png'
+const logoBlack = '/logo-black.png'
+const logoWhite = '/logo-white.png'
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
