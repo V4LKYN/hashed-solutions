@@ -63,11 +63,40 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="mb-6 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.24em] text-[#58e791]"><span className="h-px w-7 bg-[#58e791]" />{children}</p>
 }
 
-export function ProductCard({ product }: { product: typeof products[number] }) {
-  return <article className="flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6">
-    <div><h3 className="mb-3 text-2xl font-medium tracking-tight text-white">{product.name}</h3><p className="mb-4 text-sm font-medium text-white/60">{product.label}</p><p className="max-w-sm text-sm leading-6 text-white/45">{product.description}</p></div>
-    <a href="#contact" className="group mt-8 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[#58e791]">Explore Service <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a>
-  </article>
+export function ProductCard({ product }: { product: typeof productCatalog[number] }) {
+  return (
+    <article className="flex min-h-[360px] flex-col justify-between border-t border-white/15 py-6">
+      <div>
+        <div className="mb-3 flex items-center justify-between gap-4">
+          <h3 className="text-2xl font-medium tracking-tight text-white">
+            {product.name}
+          </h3>
+
+          <img
+            src={product.logo}
+            alt={`${product.name} logo`}
+            className="h-8 w-auto max-w-[100px] object-contain"
+          />
+        </div>
+
+        <p className="mb-4 text-sm font-medium text-white/60">
+          {product.label}
+        </p>
+
+        <p className="max-w-sm text-sm leading-6 text-white/45">
+          {product.description}
+        </p>
+      </div>
+
+      <a
+        href="#contact"
+        className="group mt-8 flex w-fit items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/50 transition-colors hover:text-[#58e791]"
+      >
+        Explore Service
+        <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+      </a>
+    </article>
+  )
 }
 
 export function Footer() {

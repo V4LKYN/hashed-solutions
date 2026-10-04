@@ -1,7 +1,29 @@
 export const productCatalog = [
-  { slug: 'mepp', name: 'MEPP', label: 'Merchant Endpoint Payment Processor', description: 'Settle digital asset payments on your terms. MEPP gives merchants a configurable payment layer that keeps treasury strategy private while making crypto checkout feel native.', detail: 'A settlement engine for businesses that need to accept crypto without exposing their operating position to the market. Configure asset rules, settlement timing, and merchant endpoints through one controlled interface.', features: ['Configurable settlement rules', 'Merchant-side value protection', 'Native crypto payment flows'] },
-  { slug: 'accs', name: 'ACCS', label: 'Aggregated Cross Chain State Network', description: 'A developer-focused network layer that collects, validates, and batches state across supported chains—reducing friction and transaction overhead without compromising protocol integrity.', detail: 'ACCS client networks maintain chain-native validation while intelligently grouping compatible transactions. What normally becomes five separate onchain actions can become one verified settlement, lowering fees and simplifying cross-chain application design.', features: ['Protocol-aware state validation', 'Batched onchain settlement', 'Chain-native assets and tokens'] },
-  { slug: 'hops', name: 'HOPS', label: 'Hashed Onion Protocol Service', description: 'A privacy-first relay network that validates and routes requests through a distributed, economically secured path—keeping origin, destination, and intent separate.', detail: 'DERN uses a three-hop relay architecture inspired by onion routing, with each node seeing only the context it needs. Relay operators stake value to participate and can be slashed for dishonest behavior, aligning network privacy with accountable infrastructure.', features: ['Three-hop encrypted routing', 'Protocol-validated relay operations', 'Stake-backed operator incentives'] },
+  {
+    slug: 'mepp',
+    name: 'MEPP',
+    label: 'Merchant Endpoint Payment Processor',
+    logo: '/images/mepp-logo-white.png',
+    description: 'Settle digital asset payments on your terms. MEPP gives merchants a configurable payment layer that keeps treasury strategy private while making crypto checkout feel native.',
+    detail: 'A settlement engine for businesses that need to accept crypto without exposing their operating position to the market. Configure asset rules, settlement timing, and merchant endpoints through one controlled interface.',
+    features: ['Configurable settlement rules', 'Merchant-side value protection', 'Native crypto payment flows']
+  },
+  {
+    slug: 'accs',
+    name: 'ACCS',
+    label: 'Aggregated Cross Chain State Network',
+    logo: '/images/accs-logo-white.png',
+    description: 'A developer-focused network layer that collects, validates, and batches state across supported chains—reducing friction and transaction overhead without compromising protocol integrity.',
+    detail: 'ACCS client networks maintain chain-native validation while intelligently grouping compatible transactions. What normally becomes five separate onchain actions can become one verified settlement, lowering fees and simplifying cross-chain application design.',
+    features: ['Protocol-aware state validation', 'Batched onchain settlement', 'Chain-native assets and tokens']
+  },
+  {
+    slug: 'hops',
+    name: 'HOPS',
+    label: 'Hashed Onion Protocol Service',
+    logo: '/images/hops-logo-white.png',
+    description: 'A privacy-first relay network that validates and routes requests through a distributed, economically secured path—keeping origin, destination, and intent separate.',
+    detail: 'DERN uses a three-hop relay architecture inspired by onion routing, with each node seeing only the context it needs. Relay operators stake value to participate and can be slashed for dishonest behavior, aligning network privacy with accountable infrastructure.',
+    features: ['Three-hop encrypted routing', 'Protocol-validated relay operations', 'Stake-backed operator incentives']
+  },
 ]
-
-export const dataTool = { slug: 'data', name: 'API Tools', label: 'APIs And Command Line Tools', description: 'Connect to Hashed Solutions products, automate workflows, and build your own blockchain applications with focused APIs and practical command line tools.', detail: 'API Tools gives developers a direct, composable way to work with our services. Use APIs to integrate payment settlement, cross-chain capabilities, privacy-aware routing, and network intelligence into existing products—or use the CLI to configure, test, and operate those integrations from the command line. Start with our tools, then build the experience your users need on top.', features: ['Product integration APIs', 'Developer CLI workflows', 'Build and operate your own applications'] }
