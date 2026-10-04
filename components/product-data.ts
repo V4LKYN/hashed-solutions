@@ -1,7 +1,7 @@
 export const productCatalog = [
   {
     slug: 'mepp',
-    name: 'MEPP',
+    name: 'MEPP Payments',
     label: 'Merchant Endpoint Payment Processor',
     logoWhite: '/images/mepp-logo-white.png',
     logoBlack: '/images/mepp-logo-black.png',
@@ -11,7 +11,7 @@ export const productCatalog = [
   },
   {
     slug: 'accs',
-    name: 'ACCS',
+    name: 'ACCS Network',
     label: 'Aggregated Cross Chain State Network',
     logoWhite: '/images/accs-logo-white.png',
     logoBlack: '/images/accs-logo-black.png',
@@ -21,7 +21,7 @@ export const productCatalog = [
   },
   {
     slug: 'hops',
-    name: 'HOPS',
+    name: 'HOPS Router',
     label: 'Hashed Onion Protocol Service',
     logoWhite: '/images/hops-logo-white.png',
     logoBlack: '/images/hops-logo-black.png',
